@@ -3,9 +3,7 @@ package Apache::Log::Spread;
 use ExtUtils::MakeMaker;
 
 my $failed = 0;
-eval {  
-    "require Apache::ExtUtils qw( command_table )";
-};
+eval "require Apache::ExtUtils";
 if ($@) {
     warn "You need Apache::ExtUtils (mod_perl) to run this program: $@\n";
     $failed = 1;
@@ -41,7 +39,7 @@ my @directives = (
                 req_override => 'RSRC_CONF'
         }, );
           
-command_table(\@directives);
+Apache::ExtUtils::command_table(\@directives);
 
 WriteMakefile(
     'NAME'		=> 'Apache::Log::Spread',
