@@ -15,7 +15,7 @@ use Spread;
 
 use vars qw( $VERSION $mailbox $private_group $iter);
 
-$VERSION = '1.0.0';
+$VERSION = '1.0.1';
 
 if($ENV{MOD_PERL}) {
     no strict;

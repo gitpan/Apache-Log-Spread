@@ -29,7 +29,7 @@ command_table(\@directives);
 WriteMakefile(
     'NAME'		=> 'Apache::Log::Spread',
     'VERSION_FROM'	=> 'Spread.pm', 
-    'PREREQ_PM'		=> {Spread => 0, 'Apache::Util' => 0, 'Apache::ModuleConfig' => 0, 'Apache::Constants' => 0, 'DynaLoader' => 0,},
+    'PREREQ_PM'		=> {Spread => 0, 'Apache::ExtUtils' => 0, 'Apache::Util' => 0, 'Apache::ModuleConfig' => 0, 'Apache::Constants' => 0, 'DynaLoader' => 0,},
     'INC'   => Apache::src->new->inc,     
 );
 __END__
