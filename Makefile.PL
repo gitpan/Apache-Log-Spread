@@ -2,8 +2,25 @@ package Apache::Log::Spread;
 
 use ExtUtils::MakeMaker;
 
-use Apache::ExtUtils qw( command_table );
-use Apache::src ();
+my $failed = 0;
+eval {  
+    "require Apache::ExtUtils qw( command_table )";
+};
+if ($@) {
+    warn "You need Apache::ExtUtils (mod_perl) to run this program: $@\n";
+    $failed = 1;
+}
+
+eval {
+    require Apache::src;
+};
+if ($@) {
+    warn "You need Apache::src (mod_perl) to run this program: $@\n";
+    $failed = 1;
+} 
+if($failed) {
+    exit;
+}
 
 my @directives = (
         {       name             => 'MLS_LogFormat',
